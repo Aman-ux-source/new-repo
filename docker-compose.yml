@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  web:
+    image: nginx
+    container_name: web_container
+    ports:
+      - "8086:80"
+
+  app:
+    image: httpd
+    container_name: app_container
+    ports:
+      - "8081:80"
+
+  db:
+    image: mysql:8.0
+    container_name: db_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: mydb
+
